@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --side_nav_width: 300px;
+}
+
+.layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.main_content {
+    width: calc( 100% - var(--side_nav_width));
+    height: 100%;
+}

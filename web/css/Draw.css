@@ -1,0 +1,7 @@
+.draw-component {
+    width: 70%;
+    height: 60%;
+    margin: 50px 50px auto;
+    float: left;
+    background-color: aqua;
+}

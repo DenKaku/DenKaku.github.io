@@ -1,0 +1,66 @@
+.App {
+    width:540px;
+	margin:40px auto;
+	overflow:auto;
+}
+
+#img {
+    height: 300px;
+    width: 500px;
+    position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+}
+
+/* #img div {
+    display: none;
+    width: 500px;
+    height: 300px;
+}
+
+#img div.active {
+    display:inline-block;
+} */
+
+#img .stage {
+    display: none;
+    width: 500px;
+    height: 300px;
+}
+
+#img .stage.active {
+    display:inline-block;
+}
+
+/* .active {
+    display:inline-block;
+} */
+/* #img canvas {
+    display: none !important;
+    width: 500px;
+    height: 300px;
+}
+
+#img canvas.active {
+    display:inline-block!important;
+} */
+
+.prev,.next{
+	float:left;
+	margin-top:130px;
+	cursor: pointer;
+}
+
+.prev{
+	position:relative;
+	margin-right:-45px;
+	z-index:100;
+
+}
+
+.next{
+	position:relative;
+	margin-left:-45px;
+	z-index:100;
+}
