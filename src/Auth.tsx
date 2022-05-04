@@ -53,50 +53,50 @@ const Auth:React.FunctionComponent<{}> = (props) => {
         )
    }
 
-   const ClockComponent:React.FunctionComponent<{}> = (props) => {
-        useEffect(() => {
-            let time = document.querySelector("#time")
-            if(null !== time) {
-                timer(time)
-            }
+//    const ClockComponent:React.FunctionComponent<{}> = (props) => {
+//         useEffect(() => {
+//             let time = document.querySelector("#time")
+//             if(null !== time) {
+//                 timer(time)
+//             }
 
-            setInterval(() => {
-                if(null !== time) {
-                    timer(time)
-                }
-            }, 1000)
-       }, [])
+//             setInterval(() => {
+//                 if(null !== time) {
+//                     timer(time)
+//                 }
+//             }, 1000)
+//        }, [])
 
-       const timer = (time_el: Element) => {
+//        const timer = (time_el: Element) => {
 
-           let date = new Date()
+//            let date = new Date()
 
-           let h:string | number = date.getHours()
-           let m:string | number = date.getMinutes()
-           let s:string | number = date.getSeconds()
+//            let h:string | number = date.getHours()
+//            let m:string | number = date.getMinutes()
+//            let s:string | number = date.getSeconds()
 
-           let day_night = "AM"
+//            let day_night = "AM"
 
-           if(12 < h) {
-                h = h - 12
-                day_night = "PM"
-           }
+//            if(12 < h) {
+//                 h = h - 12
+//                 day_night = "PM"
+//            }
 
-           if (10 > h) { h = "0" + h}
-           if (10 > m) { m = "0" + m}
-           if (10 > s) { s = "0" + s}
+//            if (10 > h) { h = "0" + h}
+//            if (10 > m) { m = "0" + m}
+//            if (10 > s) { s = "0" + s}
 
-           time_el.textContent = h + ":" + m + ":" + s + " " + day_night
-       }
+//            time_el.textContent = h + ":" + m + ":" + s + " " + day_night
+//        }
 
-       return (
-           <div className="clock_box">
-               <div className="clock" id="time">
-                    {/* <p id="time"></p> */}
-               </div>
-           </div>
-       )
-   }
+//        return (
+//            <div className="clock_box">
+//                <div className="clock" id="time">
+//                     {/* <p id="time"></p> */}
+//                </div>
+//            </div>
+//        )
+//    }
 
    return(
          <div className="auth_content" hidden={hiddenPage}>
