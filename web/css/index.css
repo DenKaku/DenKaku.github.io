@@ -11,24 +11,36 @@ html {
 body {
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
 }
 
 #root {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 :root {
     --side_nav_width: 300px;
-}
-
-.layout {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    --top_bar_height: 50px;
 }
 
 .main_content {
-    width: calc( 100% - var(--side_nav_width));
-    height: 100%;
+    margin-top: 50px;
+    width: 100%;
+    height: calc(100% - var(--top_bar_height));
+}
+
+[hidden] {
+    display: none;
 }

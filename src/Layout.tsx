@@ -1,69 +1,51 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import $ from "jquery"
-import "jquery-ui"
 
+import {connect, Provider} from "react-redux"
+import Store, {mapTopbarState} from "./redux/Store"
+
+import Auth from "./Auth"
+import Topbar from './Topbar'
 import SideNavigation from './SideNavigation'
 import MyProfile from './profile/profile'
 import HomePage from './HomePage'
+import MarioWithCanvas from "./Study/MarioWithCanvas/Components/MarioWithCanvas"
+import MyCanvas from './Study/LearnCanvas/components/MyCanvas'
 
 const Layout:React.FunctionComponent<{}> = (props) => {
-
+  const ConnectedTopbar = connect(mapTopbarState)(Topbar)
   return (
-    <BrowserRouter>
-        <div className='layout'>
-            <SideNavigation />
+    <Provider store={Store}>
+        <BrowserRouter>
+            <ConnectedTopbar/>
             <main className='main_content'>
+                <SideNavigation />
                 <Routes>
                     <Route
                         path='/'
+                        element={<Auth/>}
+                    />
+                    <Route
+                        path='/homepage'
                         element={<HomePage/>}
                     />
                     <Route
                         path='/profile'
                         element={<MyProfile/>}
                     />
-
+                    <Route
+                        path='/learn_canvas'
+                        element={<MyCanvas/>}
+                    />
+                    <Route
+                        path='/mario_with_canvas'
+                        element={<MarioWithCanvas/>}
+                    />
                 </Routes>
             </main>
-        </div>
-    </BrowserRouter>
+        </BrowserRouter>
+    </Provider>
   )
 }
-
-// function Layout() {
-
-//     const onPrevClick = () => {
-//         let currentImg = $(".active")
-//         let prevImage = currentImg.prev()
-//         if(prevImage.length) {
-//             currentImg.removeClass("active").css("z-index", -10)
-//             prevImage.addClass("active").css("z-index", 10)
-//         }
-//     }
-
-//     const onNextClick = () => {
-//         let currentImg = $(".active")
-//         let nextImage = currentImg.next()
-//         if(nextImage.length) {
-//             currentImg.removeClass("active").css("z-index", -10)
-//             nextImage.addClass("active").css("z-index", 10)
-//         }
-//     }
-
-//     return (
-//         // <div className="App">
-//         //     <div className="outer">
-//         //         <img src="../web/img/arrow-left.png" className="prev" alt="Prev" onClick={onPrevClick}/>
-//         //         <ShowImage/>
-//         //         <img src="../web/img/arrow-right.png" className="next" alt="Next" onClick={onNextClick}/>
-//         //         <img src="../web/img/arrow-left.png" className="prev" alt="Prev" onClick={onPrevClick}/>
-//         //         <ShowImage/>
-//         //         <img src="../web/img/arrow-right.png" className="next" alt="Next" onClick={onNextClick}/>
-//         //     </div>
-//         // </div>
-//         <DrawGraphComponent />
-//   );
-// }
 
 export default Layout

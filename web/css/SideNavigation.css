@@ -1,7 +1,69 @@
 .side_navigation {
     width: var(--side_nav_width);
-    height: 100%;
-    background-color: aqua;
+    height: calc(100% - var(--top_bar_height));
+    position: fixed;
+    top: 50px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: .5s;
     display: flex;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, .7);
+    /* box-shadow: 4px 5px 5px silver; */
+    border-right: 1px solid silver;
 }
+
+
+.nav_link_content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.side_navigation a {
+    color:black;
+    font-weight: bolder;
+}
+
+.side_navigation ul {
+    list-style-type: none;
+}
+
+.side_navigation li {
+    list-style-type: none;
+    height: 50px;
+}
+
+
+/* ul, #projects {
+    list-style-type: none;
+} */
+
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+    transform: rotate(90deg);
+  }
+
+  /* Hide the nested list */
+  .nested {
+    display: none;
+  }
+
+  /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+  .active {
+    display: block;
+  }
+

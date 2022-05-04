@@ -1,0 +1,21 @@
+.top_bar {
+    width: 100%;
+    height: var(--top_bar_height);
+    background-color: black;
+    /* display: flex; */
+    position: fixed;
+}
+
+.menu_icon {
+    color: white;
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+.menu_icon svg{
+    font-size: 40px;
+}
+
+.menu_icon svg:hover{
+    cursor: pointer;
+}
